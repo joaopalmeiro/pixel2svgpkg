@@ -3,7 +3,7 @@
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 
-A Python package/fork from the pixel2svg project by Florian Berger.
+A Python package/fork from the [pixel2svg](https://florian-berger.de/en/software/pixel2svg/) project by [Florian Berger](https://florian-berger.de/en/).
 
 ## Development
 
