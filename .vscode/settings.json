@@ -18,5 +18,5 @@
     "editor.rulers": [88]
   },
 
-  "python.pythonPath": "${workspaceFolder}/.venv/bin/python"
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
 }
