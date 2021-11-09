@@ -1,0 +1,1 @@
+DEFAULT_SQUARE_SIZE: int = 1  # px
