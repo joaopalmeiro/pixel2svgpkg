@@ -32,7 +32,7 @@ def open_image(
 def prepare_svg(input_path, width, height, rgb_values):
     # More info:
     # - https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
-    filename = "TODO.svg"
+    filename = Path(input_path).resolve(strict=True).with_suffix(".svg")
 
     svg = svgwrite.Drawing(
         filename=filename,
