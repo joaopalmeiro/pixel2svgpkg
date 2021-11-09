@@ -27,7 +27,7 @@ def open_image(input_path: Union[str, Path]) -> RGBImage:
     return RGBImage(width, height, rgb_values)
 
 
-def prepare_svg(input_path: Union[str, Path], image: RGBImage):
+def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawing:
     # More info:
     # - https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
     filename = Path(input_path).resolve(strict=True).with_suffix(".svg")
@@ -39,5 +39,14 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage):
             f"{image.height * DEFAULT_SQUARE_SIZE}px",
         ),
     )
+
+    row_count = 0
+    while row_count < image.height:
+        col_count = 0
+
+        while col_count < image.width:
+            col_count += 1
+
+        row_count += 1
 
     return svg
