@@ -45,6 +45,9 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawi
         col_count = 0
 
         while col_count < image.width:
+            rgb_tuple_index = row_count * image.height + col_count
+            # print(rgb_tuple_index)
+
             col_count += 1
 
         row_count += 1
