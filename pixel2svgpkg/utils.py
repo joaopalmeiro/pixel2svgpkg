@@ -1,7 +1,10 @@
 from pathlib import Path
 from typing import List, Tuple, Union
 
+import svgwrite
 from PIL import Image
+
+from .constants import DEFAULT_SQUARE_SIZE
 
 
 # Source: https://stackoverflow.com/a/58541858
@@ -24,3 +27,16 @@ def open_image(
         rgb_values = list(im.getdata())
 
     return width, height, rgb_values
+
+
+def prepare_svg(input_path, width, height, rgb_values):
+    # More info:
+    # - https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
+    filename = "TODO.svg"
+
+    svg = svgwrite.Drawing(
+        filename=filename,
+        size=(f"{width * DEFAULT_SQUARE_SIZE}px", f"{height * DEFAULT_SQUARE_SIZE}px"),
+    )
+
+    return svg
