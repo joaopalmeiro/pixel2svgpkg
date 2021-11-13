@@ -1,10 +1,12 @@
 # pixel2svgpkg
 
+[![PyPI](https://img.shields.io/pypi/v/pixel2svgpkg)](https://pypi.org/project/pixel2svgpkg/)
+[![PyPI - Status](https://img.shields.io/pypi/status/pixel2svgpkg)](https://pypi.org/project/pixel2svgpkg/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pixel2svgpkg)](https://pypi.org/project/pixel2svgpkg/)
+[![PyPI - License](https://img.shields.io/pypi/l/pixel2svgpkg)](https://github.com/joaopalmeiro/pixel2svgpkg/blob/main/LICENSE)
 [![security: bandit](https://img.shields.io/badge/security-bandit-yellow.svg)](https://github.com/PyCQA/bandit)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
-[![PyPI](https://img.shields.io/pypi/v/pixel2svgpkg)](https://pypi.org/project/pixel2svgpkg/)
-![PyPI - Python Version](https://img.shields.io/pypi/pyversions/pixel2svgpkg)
-![PyPI - License](https://img.shields.io/pypi/l/pixel2svgpkg)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 
 A Python package/fork from the [pixel2svg](https://florian-berger.de/en/software/pixel2svg/) project by [Florian Berger](https://florian-berger.de/en/).
 
@@ -42,3 +44,4 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
 - [Gremlins tracker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins): to identify characters that can be harmful because they are invisible or look like legitimate ones.
 - [pixel2svg-fork](https://github.com/cyChop/pixel2svg-fork).
 - [toml](https://github.com/uiri/toml) package. `poetry add --dev toml`.
+- [isort badge](https://github.com/PyCQA/isort#spread-the-word).
