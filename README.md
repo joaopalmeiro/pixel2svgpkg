@@ -36,3 +36,4 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
   - [Different python.defaultInterpreterPath by workspace not being saved](https://github.com/microsoft/vscode-python/issues/12633#issuecomment-651853209) issue. Set `python.defaultInterpreterPath` instead of `python.pythonPath` in the `settings.json` file. More info [here](https://code.visualstudio.com/docs/python/environments#_manually-specify-an-interpreter).
 - [ColorSpace](https://mycolor.space/gradient3) (3-Color-Gradient).
 - [Gremlins tracker for Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=nhoizey.gremlins): to identify characters that can be harmful because they are invisible or look like legitimate ones.
+- [pixel2svg-fork](https://github.com/cyChop/pixel2svg-fork).

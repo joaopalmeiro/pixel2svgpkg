@@ -28,8 +28,7 @@ def open_image(input_path: Union[str, Path]) -> RGBImage:
 
 
 def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawing:
-    # More info:
-    # - https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
+    # More info: https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
     filename = Path(input_path).resolve(strict=True).with_suffix(".svg")
 
     svg = svgwrite.Drawing(
@@ -40,6 +39,8 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawi
         ),
     )
 
+    rect_size = (f"{DEFAULT_SQUARE_SIZE}px", f"{DEFAULT_SQUARE_SIZE}px")
+
     row_count = 0
     while row_count < image.height:
         col_count = 0
@@ -47,9 +48,45 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawi
         while col_count < image.width:
             rgb_tuple_index = row_count * image.height + col_count
             # print(rgb_tuple_index)
+            rgb_tuple = image.values[rgb_tuple_index]
+
+            # Ignore transparent pixels.
+            if rgb_tuple[3] > 0:
+                rect_pos = (
+                    f"{col_count * DEFAULT_SQUARE_SIZE}px",
+                    f"{row_count * DEFAULT_SQUARE_SIZE}px",
+                )
+
+                rect_fill = svgwrite.rgb(rgb_tuple[0], rgb_tuple[1], rgb_tuple[2])
+                alpha = rgb_tuple[3]
+
+                # Source: https://github.com/cyChop/pixel2svg-fork/blob/master/pixel2svg.py#L102
+                if alpha == 255:
+                    svg.add(
+                        svg.rect(
+                            insert=rect_pos,
+                            size=rect_size,
+                            fill=rect_fill,
+                        )
+                    )
+                else:
+                    svg.add(
+                        svg.rect(
+                            insert=rect_pos,
+                            size=rect_size,
+                            fill=rect_fill,
+                            opacity=alpha / 255.0,
+                        )
+                    )
 
             col_count += 1
 
         row_count += 1
 
     return svg
+
+
+def save_svg(
+    svg: svgwrite.Drawing, pretty_output: bool = False, indent: int = 2
+) -> None:
+    svg.save(pretty=pretty_output, indent=indent)

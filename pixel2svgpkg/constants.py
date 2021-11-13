@@ -9,4 +9,4 @@ DEFAULT_SQUARE_SIZE: int = 1  # px
 class RGBImage(NamedTuple):
     width: int
     height: int
-    values: List[Tuple[int, int, int]]
+    values: List[Tuple[int, int, int, int]]  # RGBA
