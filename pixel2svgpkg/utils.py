@@ -87,6 +87,6 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawi
 
 
 def save_svg(
-    svg: svgwrite.Drawing, pretty_output: bool = False, indent: int = 2
+    svg: svgwrite.Drawing, output_pretty: bool = False, output_indent: int = 2
 ) -> None:
-    svg.save(pretty=pretty_output, indent=indent)
+    svg.save(pretty=output_pretty, indent=output_indent)
