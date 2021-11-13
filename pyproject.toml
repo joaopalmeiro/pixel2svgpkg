@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pixel2svgpkg"
-version = "0.0.1"
+version = "0.1.0"
 description = "A Python package/fork from the pixel2svg project by Florian Berger."
 authors = ["João Palmeiro <joaommpalmeiro@gmail.com>"]
 license = "GPL-3.0-only"

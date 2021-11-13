@@ -30,6 +30,7 @@ This package was created with [Cookiecutter](https://github.com/audreyr/cookiecu
 ## Notes
 
 - Poetry:
+  - `poetry --version`.
   - [Licenses](https://python-poetry.org/docs/pyproject#license).
   - [Exception: `No module named 'virtualenv.activation.nushell'`](https://github.com/python-poetry/poetry/issues/4515) issue. Run `poetry self update` to update Poetry (to version 1.1.11).
 - VS Code:
