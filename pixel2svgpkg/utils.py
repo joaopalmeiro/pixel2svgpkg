@@ -11,10 +11,10 @@ from .constants import DEFAULT_SQUARE_SIZE, RGBImage
 def open_image(input_path: Union[str, Path]) -> RGBImage:
     # More info:
     # - https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.open
-    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#open-rotate-and-display-an-image-using-the-default-viewer
+    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#open-rotate-and-display-an-image-using-the-default-viewer  # noqa: E501
     # - https://pillow.readthedocs.io/en/stable/handbook/concepts.html#modes
-    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.convert
-    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.getdata
+    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.convert  # noqa: E501
+    # - https://pillow.readthedocs.io/en/stable/reference/Image.html#PIL.Image.Image.getdata  # noqa: E501
     with Image.open(input_path) as im:
         # print(im.mode)
         im = im.convert("RGBA")
@@ -28,7 +28,7 @@ def open_image(input_path: Union[str, Path]) -> RGBImage:
 
 
 def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawing:
-    # More info: https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing
+    # More info: https://svgwrite.readthedocs.io/en/latest/classes/drawing.html#svgwrite.drawing.Drawing  # noqa: E501
     filename = Path(input_path).resolve(strict=True).with_suffix(".svg")
 
     svg = svgwrite.Drawing(
@@ -60,7 +60,7 @@ def prepare_svg(input_path: Union[str, Path], image: RGBImage) -> svgwrite.Drawi
                 rect_fill = svgwrite.rgb(rgb_tuple[0], rgb_tuple[1], rgb_tuple[2])
                 alpha = rgb_tuple[3]
 
-                # Source: https://github.com/cyChop/pixel2svg-fork/blob/master/pixel2svg.py#L102
+                # Source: https://github.com/cyChop/pixel2svg-fork/blob/master/pixel2svg.py#L102  # noqa: E501
                 if alpha == 255:
                     svg.add(
                         svg.rect(
